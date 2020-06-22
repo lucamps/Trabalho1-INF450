@@ -40,6 +40,7 @@ somatorio(int):
         slli    a5,a5,2
         sd      a5,-40(s0)
         sw      zero,-20(s0)
+        sw      zero,-52(s0)
 .L5:
         lw      a4,-20(s0)
         lw      a5,-24(s0)

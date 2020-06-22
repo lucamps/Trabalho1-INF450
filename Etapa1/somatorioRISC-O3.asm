@@ -9,6 +9,7 @@ somatorio(int):
         mv      a5,sp
         addi    a3,a3,-1408
         add     a3,a5,a3
+        li      a0,0
         j       .L4
 .L9:
         addi    a5,a5,4
