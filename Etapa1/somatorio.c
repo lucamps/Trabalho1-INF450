@@ -9,5 +9,6 @@ int somatorio(int soma){
         else{ 
             soma = soma - a[i];
         }
-    }   
+    }
+    return soma;   
 }

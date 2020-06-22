@@ -1,4 +1,4 @@
-somatorio:
+somatorio(int):
         addi    sp,sp,-64
         sd      s0,56(sp)
         addi    s0,sp,64
@@ -9,10 +9,10 @@ somatorio:
         addiw   a0,a0,1696
         sw      a0,-24(s0)
         lw      a0,-24(s0)
+        addi    a0,a0,-1
+        sd      a0,-32(s0)
         mv      a7,a0
-        addi    a7,a7,-1
-        sd      a7,-32(s0)
-        mv      a7,a0
+        addi    a7,a7,1
         mv      t1,a7
         li      t2,0
         srli    a7,t1,59
@@ -20,6 +20,7 @@ somatorio:
         or      a4,a7,a4
         slli    a3,t1,5
         mv      a4,a0
+        addi    a4,a4,1
         mv      a1,a4
         li      a2,0
         srli    a4,a1,59
@@ -27,6 +28,7 @@ somatorio:
         or      a6,a4,a6
         slli    a5,a1,5
         mv      a5,a0
+        addi    a5,a5,1
         slli    a5,a5,2
         addi    a5,a5,15
         srli    a5,a5,4
@@ -38,8 +40,12 @@ somatorio:
         slli    a5,a5,2
         sd      a5,-40(s0)
         sw      zero,-20(s0)
-        j       .L2
 .L5:
+        lw      a4,-20(s0)
+        lw      a5,-24(s0)
+        sext.w  a4,a4
+        sext.w  a5,a5
+        bge     a4,a5,.L2
         ld      a4,-40(s0)
         lw      a5,-20(s0)
         slli    a5,a5,2
@@ -68,14 +74,10 @@ somatorio:
         lw      a5,-20(s0)
         addiw   a5,a5,1
         sw      a5,-20(s0)
+        j       .L5
 .L2:
-        lw      a4,-20(s0)
-        lw      a5,-24(s0)
-        sext.w  a4,a4
-        sext.w  a5,a5
-        blt     a4,a5,.L5
+        lw      a5,-52(s0)
         mv      sp,t3
-        nop
         mv      a0,a5
         addi    sp,s0,-64
         ld      s0,56(sp)
