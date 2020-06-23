@@ -1,12 +1,18 @@
 # Trabalho1-INF450
 Primeiro trabalho da disciplina de Arquitetura de Computadores - UFV.
 
-# Link dos videos
+Matheus Lima - 95684, 
+Álysson Cruz - 95685,
+Lucas Campos - 92867
+
+## Link dos videos
   * [Etapa 1](https://drive.google.com/file/d/1qpPCXpjWbu-x-wzTKHXg6KJSyMvADrd1/view?usp=sharing)
 
-# Etapas
 
-## Parte 1 - Elaborar um Exemplo - Prazo 22/6/20 ----------- Ok
+
+
+## Etapas
+### Parte 1 - Elaborar um Exemplo - Prazo 22/6/20 ----------- Ok
 * Codificar em C, mostrar o código gerado com e sem -O3 no [Compiler Explorer](https://godbolt.org/)  
 * Codificar em RISCV 
 * Executar no [simulador WebRISCV](http://x.dii.unisi.it:8098/~giorgi/WebRISC-V/index.php) 
